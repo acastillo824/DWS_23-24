@@ -8,7 +8,7 @@
 <body>
     <?php
        isset($_POST['nombre_campo_1']) ? print $_POST['nombre_campo_1'] : "";
-       print $_POST['nombre_campo_2'];
+       print "<br>" . $_POST['nombre_campo_2'];
     ?>
 </body>
 </html>
