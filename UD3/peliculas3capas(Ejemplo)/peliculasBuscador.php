@@ -13,6 +13,20 @@
           <option value="1">Accion</option>
         </select>
         <input type="submit" name="Enviar">
-    </form> 
+    </form>
+    
+    <?php
+      require("peliculasReglasNegocio.php");
+      $peliculasBL = new PeliculasReglasNegocio();
+      $datosPeliculas = $peliculasBL->obtener($categoria);
+      
+      foreach ($datosPeliculas as $pelicula)
+      {
+          echo "<div>";
+          print($pelicula->getID());
+          print($pelicula->getNombre());
+          echo "</div>";
+      }
+    ?>
 </body>
 </html>
