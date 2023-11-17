@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jK00Yw1LFwPZbpNzkMtKWof5xeEbK4SXLOI1uoGBHpAOeP8DPqUHclK9tHrv2KYnIqnxzS3XQ7ZYahkYTpXYKA==",
+  "dgSpecHash": "V5YjsfqswLfE3mmN7m9tTK8/d/wsuCPYrSsegI1N0p6d+UNYbeATEyEhYyLW67lUmO+peaZzCRRcSJJhPofzUg==",
   "success": true,
-  "projectFilePath": "/var/www/html/Castillo5115/DWS/ud2/Practica/ajedrez_consola/chess_console.csproj",
+  "projectFilePath": "/var/www/html/Castillo5115/DWS_23-24/UD2/Practica/ajedrez_consola/chess_console.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

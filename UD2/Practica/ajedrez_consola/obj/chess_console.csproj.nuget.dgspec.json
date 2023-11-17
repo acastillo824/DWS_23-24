@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/var/www/html/Castillo5115/DWS/ud2/Practica/ajedrez_consola/chess_console.csproj": {}
+    "/var/www/html/Castillo5115/DWS_23-24/UD2/Practica/ajedrez_consola/chess_console.csproj": {}
   },
   "projects": {
-    "/var/www/html/Castillo5115/DWS/ud2/Practica/ajedrez_consola/chess_console.csproj": {
+    "/var/www/html/Castillo5115/DWS_23-24/UD2/Practica/ajedrez_consola/chess_console.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/var/www/html/Castillo5115/DWS/ud2/Practica/ajedrez_consola/chess_console.csproj",
+        "projectUniqueName": "/var/www/html/Castillo5115/DWS_23-24/UD2/Practica/ajedrez_consola/chess_console.csproj",
         "projectName": "chess_console",
-        "projectPath": "/var/www/html/Castillo5115/DWS/ud2/Practica/ajedrez_consola/chess_console.csproj",
+        "projectPath": "/var/www/html/Castillo5115/DWS_23-24/UD2/Practica/ajedrez_consola/chess_console.csproj",
         "packagesPath": "/home/horabaixa/.nuget/packages/",
-        "outputPath": "/var/www/html/Castillo5115/DWS/ud2/Practica/ajedrez_consola/obj/",
+        "outputPath": "/var/www/html/Castillo5115/DWS_23-24/UD2/Practica/ajedrez_consola/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/horabaixa/.nuget/NuGet/NuGet.Config"
@@ -52,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.124/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.125/RuntimeIdentifierGraph.json"
         }
       }
     }

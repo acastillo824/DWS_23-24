@@ -7,15 +7,15 @@ class PeliculasAccesoDatos
     {
     }
 
-	function obtener()
+	function obtener($categoria)
 	{
 		$conexion = mysqli_connect('localhost','root','12345');
 		if (mysqli_connect_errno())
 		{
 				echo "Error al conectar a MySQL: ". mysqli_connect_error();
 		}
- 		mysqli_select_db($conexion, 'new_schema');
-		$consulta = mysqli_prepare($conexion, "select ID,titulo from T_Peliculas");
+ 		mysqli_select_db($conexion, 'Peliculas');
+		$consulta = mysqli_prepare($conexion, "select ID,titulo from T_Peliculas WHERE id_categoria = '".$categoria."'");
         $consulta->execute();
         $result = $consulta->get_result();
 

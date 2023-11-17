@@ -28,10 +28,10 @@ class PeliculasReglasNegocio
     }
 
 
-    function obtener()
+    function obtener($categoria)
     {
         $peliculasDAL = new PeliculasAccesoDatos();
-        $rs = $peliculasDAL->obtener();
+        $rs = $peliculasDAL->obtener($categoria);
 		$listaPeliculas =  array();
         foreach ($rs as $pelicula)
         {

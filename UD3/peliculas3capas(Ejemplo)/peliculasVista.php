@@ -7,9 +7,10 @@
 <body>
     <h1> Listado de peliculas </h1>
     <?php
+        $categoria = $_POST['categoria'];
         require("peliculasReglasNegocio.php");
         $peliculasBL = new PeliculasReglasNegocio();
-        $datosPeliculas = $peliculasBL->obtener();
+        $datosPeliculas = $peliculasBL->obtener($categoria);
         
         foreach ($datosPeliculas as $pelicula)
         {
@@ -19,6 +20,7 @@
             echo "</div>";
         }
     ?>
+
 </body>
 
 </html>
