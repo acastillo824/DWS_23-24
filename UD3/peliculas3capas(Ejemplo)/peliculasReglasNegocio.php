@@ -42,5 +42,21 @@ class PeliculasReglasNegocio
         
         return $listaPeliculas;
     }
+
+    function obtenerCategorias()
+    {
+        $peliculasDAL = new PeliculasAccesoDatos();
+        $rs = $peliculasDAL->obtenerCategorias();
+		$listaCategorias =  array();
+        foreach ($rs as $categorias)
+        {
+            $oPeliculasReglasNegocio = new PeliculasReglasNegocio();
+            $oPeliculasReglasNegocio->Init($categorias['ID'],$categorias['nombre']);
+            array_push($listaCategorias,$oPeliculasReglasNegocio);
+        }
+        
+        return $listaCategorias;
+    }
+
 }
 
