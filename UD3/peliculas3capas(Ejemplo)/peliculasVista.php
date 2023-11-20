@@ -5,7 +5,8 @@
 </head>
 
 <body>
-    <h1> Listado de peliculas </h1>
+    <h1> Listado de peliculas </h1> 
+    
     <?php
         $categoria = $_POST['categoria'];
         require("peliculasReglasNegocio.php");
@@ -15,8 +16,8 @@
         foreach ($datosPeliculas as $pelicula)
         {
             echo "<div>";
-            print($pelicula->getID());
-            print($pelicula->getTitulo());
+            print($pelicula->getID()."->\t");
+            print("<a href=\"datosPelicula.php?idPelicula=".$pelicula->getID().">".$pelicula->getTitulo()."</a>");
             echo "</div>";
         }
     ?>
