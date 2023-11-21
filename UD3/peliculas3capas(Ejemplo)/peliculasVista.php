@@ -17,7 +17,7 @@
         {
             echo "<div>";
             print($pelicula->getID()."->\t");
-            print("<a href=\"datosPelicula.php?idPelicula=".$pelicula->getID().">".$pelicula->getTitulo()."</a>");
+            print("<a href=\"datosPelicula.php?idPelicula=".$pelicula->getID()."\">".$pelicula->getTitulo()."</a>");
             echo "</div>";
         }
     ?>

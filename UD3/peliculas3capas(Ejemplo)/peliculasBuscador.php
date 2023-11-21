@@ -7,11 +7,6 @@
 </head>
 <body>
     <h3>Elige una categoria:</h3>    
-    <?php
-      ini_set('display_errors', 1);
-      ini_set('html_errors', 1);
-      
-    ?>
     <form action="peliculasVista.php" method="post">
         <select name="categoria" id="categoria">
           <option value="0">Terror</option>

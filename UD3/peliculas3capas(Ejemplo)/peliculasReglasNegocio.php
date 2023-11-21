@@ -16,7 +16,7 @@ class PeliculasReglasNegocio
     {
     }
 
-    function init($id,$titulo, $año, $duracion, $sinopsis, $imagen, $votos)
+    function init($id,$titulo, $año, $duracion, $sinopsis, $imagen, $votos, )
     {
         $this->_ID = $id;
         $this->_Titulo = $titulo;
@@ -72,5 +72,23 @@ class PeliculasReglasNegocio
         
         return $listaPeliculas;
     }
+
+    function obtenerDatos($idPelicula)
+    {
+        $peliculasDAL = new PeliculasAccesoDatos();
+        $rs = $peliculasDAL->obtenerDatos($idPelicula);
+		$listaPeliculas =  array();
+        foreach ($rs as $pelicula)
+        {
+            $oPeliculasReglasNegocio = new PeliculasReglasNegocio();
+            $oPeliculasReglasNegocio->Init($pelicula['ID'],$pelicula['titulo'],$pelicula['año'],$pelicula['duracion'],$pelicula['sinopsis'],$pelicula['imagen'],$pelicula['votos']);
+            array_push($listaPeliculas,$oPeliculasReglasNegocio);
+        }
+        
+        return $listaPeliculas;
+    }
+    
+    
+
 }
 
