@@ -20,6 +20,40 @@
             <a class='enlaces' href="">Lista de partidas</a>
         </div>
         <div id='formulario'>
+            <?php
+                ini_set('display_errors', 1);
+                ini_set('html_errors', 1);
+
+                require("boardBusiness.php");
+
+                $playersBL = new BoardBusiness();
+                $infoPlayers = $playersBL->getPlayers();
+                
+                foreach ($infoPlayers as $players)
+                {
+                    echo "<div>";
+                    print($players->getID()."\t");
+                    print($players->getName());
+                    echo "</div>";
+                }
+
+                echo "<form action=\"boardView.php\" method=\"POST\">";
+                        echo "<label for=\"\">Jugador Blancas: </label>";
+                        echo "<select name=\"jugador\" id=\"jugador\">";
+                            echo "<option value=\"".$players->getID()."\">".$players->getName()."</option>";
+                        echo "</select>";
+                        // <br><br>
+                        // <label for="">Jugador Negras: </label>
+                        // <select name="jugador" id="jugador">
+                        //     <option value="$idJugador">$nombreJugador</option>
+                        // </select>
+                        // <br><br>
+                        // <label for="">Titulo de la partida: </label>
+                        // <input id="botonEnviar" type="text">
+                        // <br><br>
+                        // <input type="submit" value="Enviar">
+                    echo "</form>";
+            ?>
             <form action="boardView.php" method="POST">
 
                 <label for="">Jugador Blancas: </label>
