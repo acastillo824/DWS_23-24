@@ -11,14 +11,13 @@
 <body>
 
     <header>
-        <h1 id="titulo">BIENVENIDO A CHESS</h1>
-        <img  id='imagenPortada' src="img/peon.png" alt="Peon Portada">
+        <h1 id="titulo">Lista de Partidas</h1>
     </header>
 
     <nav>
         <div id="menu">
+            <a class='enlaces' href="index.php">Home</a>
             <a class='enlaces' href="new_gameView.php">Nueva Partida</a>
-            <a class='enlaces' href="gameListView.php">Lista de partidas</a>
         </div>
     </nav>
 

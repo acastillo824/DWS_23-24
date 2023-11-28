@@ -7,17 +7,20 @@
 </head>
 <body>
     <?php
-        require("bordBusiness.php");
+        ini_set('display_errors', 1);
+        ini_set('html_errors', 1);
+        require("boardBusiness.php");
         $playersBL = new BoardBusiness();
         $infoPlayers = $playersBL->getPlayers();
         
-        foreach ($infoPlayers as $players)
-        {
-            echo "<div>";
-            print($pelicula->getID()."->\t");
-            print($pelicula->getName());
-            echo "</div>";
-        }
+        $idWHPlayer = $_POST["playerWhite"];
+        $idBLPlayer = $_POST["playerBlack"];
+        $matchName = $_POST["matchName"];
+        
+        $playersBL->insertMatch($idWHPlayer, $idBLPlayer);
+        
+
+        
     ?>
 </body>
 </html>

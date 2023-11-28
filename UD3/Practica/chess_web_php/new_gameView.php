@@ -17,7 +17,7 @@
     <nav>
         <div id="menu">
             <a class='enlaces' href="index.php">Home</a>
-            <a class='enlaces' href="">Lista de partidas</a>
+            <a class='enlaces' href="gameListView.php">Lista de partidas</a>
         </div>
         <div id='formulario'>
             <?php
@@ -29,49 +29,28 @@
                 $playersBL = new BoardBusiness();
                 $infoPlayers = $playersBL->getPlayers();
                 
-                foreach ($infoPlayers as $players)
-                {
-                    echo "<div>";
-                    print($players->getID()."\t");
-                    print($players->getName());
-                    echo "</div>";
-                }
-
                 echo "<form action=\"boardView.php\" method=\"POST\">";
-                        echo "<label for=\"\">Jugador Blancas: </label>";
-                        echo "<select name=\"jugador\" id=\"jugador\">";
+                    echo "<label for=\"\">Jugador Blancas: </label>";
+                    echo "<select name=\"playerWhite\" id=\"playerWhite\">";
+                        foreach ($infoPlayers as $players)
+                        {
                             echo "<option value=\"".$players->getID()."\">".$players->getName()."</option>";
-                        echo "</select>";
-                        // <br><br>
-                        // <label for="">Jugador Negras: </label>
-                        // <select name="jugador" id="jugador">
-                        //     <option value="$idJugador">$nombreJugador</option>
-                        // </select>
-                        // <br><br>
-                        // <label for="">Titulo de la partida: </label>
-                        // <input id="botonEnviar" type="text">
-                        // <br><br>
-                        // <input type="submit" value="Enviar">
-                    echo "</form>";
+                        }
+                    echo "</select><br><br>";
+                    echo "<label for=\"\">Jugador Negras: </label>";
+                    echo "<select name=\"playerBlack\" id=\"playerBlack\">";
+                        foreach ($infoPlayers as $players)
+                        {
+                            echo "<option value=\"".$players->getID()."\">".$players->getName()."</option>";
+                        }
+                    echo "</select><br><br>";
+   
+                    echo "<label for=''>Titulo de la partida: </label>";
+                    echo "<input type='text' name='matchName'/>";
+                    echo "<br><br>";
+                    echo "<input type=\"submit\" value=\"Enviar\">";
+                echo "</form>";
             ?>
-            <form action="boardView.php" method="POST">
-
-                <label for="">Jugador Blancas: </label>
-                <select name="jugador" id="jugador">
-                    <option value="$idJugador">$nombreJugador</option>
-                </select>
-                <br><br>
-                <label for="">Jugador Negras: </label>
-                <select name="jugador" id="jugador">
-                    <option value="$idJugador">$nombreJugador</option>
-                </select>
-                <br><br>
-                <label for="">Titulo de la partida: </label>
-                <input id="botonEnviar" type="text">
-                <br><br>
-                <input type="submit" value="Enviar">
-
-            </form>
         </div>
     </nav>
 

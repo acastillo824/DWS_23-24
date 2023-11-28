@@ -47,4 +47,9 @@ class BoardBusiness
         
         return $playersList;
     }
+    function insertMatch($idPLWH, $idPLBL)
+    {
+        $playersDAL = new BoardDAtaAccess();
+        $playersDAL->insertMatch($idPLWH, $idPLBL);
+    }
 }

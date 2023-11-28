@@ -26,4 +26,15 @@ class BoardDAtaAccess
         }
 		return $players;
     }
+    function insertMatch($idPLWH, $idPLBL)
+    {
+        $conexion = mysqli_connect('localhost','root','12345');
+		if (mysqli_connect_errno())
+		{
+				echo "Error al conectar a MySQL: ". mysqli_connect_error();
+		}
+ 		mysqli_select_db($conexion, 'Chess');
+		$consulta = mysqli_prepare($conexion, "insert into Chess.T_Matches (white, black, startDate) value ('".$idPLWH."','".$idPLBL."','2004-05-23T14:25:10');");
+        $consulta->execute();
+    }
 }
