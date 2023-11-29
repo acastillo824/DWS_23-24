@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('html_errors', 1);
 
-class BoardDAtaAccess
+class BoardDataAccess
 {
     function __construct(){}
     function getPlayers()
@@ -34,7 +34,28 @@ class BoardDAtaAccess
 				echo "Error al conectar a MySQL: ". mysqli_connect_error();
 		}
  		mysqli_select_db($conexion, 'Chess');
-		$consulta = mysqli_prepare($conexion, "insert into Chess.T_Matches (white, black, startDate) value ('".$idPLWH."','".$idPLBL."','2004-05-23T14:25:10');");
+		$consulta = mysqli_prepare($conexion, "insert into Chess.T_Matches (white, black, startDate) value ('".$idPLWH."','".$idPLBL."',NOW());");
         $consulta->execute();
+    }
+    function getMatches()
+    {
+        $conexion = mysqli_connect('localhost','root','12345');
+		if (mysqli_connect_errno())
+		{
+				echo "Error al conectar a MySQL: ". mysqli_connect_error();
+		}
+ 		mysqli_select_db($conexion, 'Chess');
+		$consulta = mysqli_prepare($conexion, "SELECT ID, white, black, startDate, endDate, winner, status FROM Chess.T_Matches");
+        $consulta->execute();
+        $result = $consulta->get_result();
+
+        $matches = array();
+
+        while ($myrow = $result->fetch_assoc()) 
+        {
+			array_push($matches,$myrow);
+
+        }
+		return $matches;
     }
 }

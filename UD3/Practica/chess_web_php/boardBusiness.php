@@ -35,7 +35,7 @@ class BoardBusiness
     }
     function getPlayers()
     {
-        $playersDAL = new BoardDAtaAccess();
+        $playersDAL = new BoardDataAccess();
         $rs = $playersDAL->getPlayers();
 		$playersList =  array();
         foreach ($rs as $players)
@@ -49,7 +49,7 @@ class BoardBusiness
     }
     function insertMatch($idPLWH, $idPLBL)
     {
-        $playersDAL = new BoardDAtaAccess();
+        $playersDAL = new BoardDataAccess();
         $playersDAL->insertMatch($idPLWH, $idPLBL);
     }
 }
