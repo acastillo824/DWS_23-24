@@ -29,7 +29,7 @@
                 $playersBL = new BoardBusiness();
                 $infoPlayers = $playersBL->getPlayers();
                 
-                echo "<form action=\"boardView.php\" method=\"POST\">";
+                echo "<form action='boardView.php' method='POST'>";
                     echo "<label for=\"\">Jugador Blancas: </label>";
                     echo "<select name=\"playerWhite\" id=\"playerWhite\">";
                         foreach ($infoPlayers as $players)
