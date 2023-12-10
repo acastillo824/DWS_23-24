@@ -1,20 +1,34 @@
+CREATE SCHEMA Chess;
+
 USE Chess;
-
-DROP TABLE IF EXISTS T_Players;
-DROP TABLE IF EXISTS T_Games;
 DROP TABLE IF EXISTS T_BoardStatus;
-
-/*Todos los ID deben ser autoincrement*/
+DROP TABLE IF exists T_Matches;
+DROP TABLE IF exists T_Players;
 
 CREATE TABLE T_Players(
-	ID INTEGER auto_increment,
-    nick varchar(100),
-    email varchar(100),
-    passwd password,
-    PRIMARY KEY (ID)
+ID int primary key auto_increment,
+name varchar(30) not null,
+email varchar(50) UNIQUE,
+passwd varchar(30) not null
 );
 
-CREATE TABLE T_Games(
-	ID INTEGER AUTO_INCREMENT,
-    PRIMARY KEY (ID)
+CREATE TABLE T_Matches(
+ID int primary key auto_increment,
+title varchar(50) not null,
+white int not null,
+black int not null,
+startDate datetime not null,
+endDate datetime,
+winner varchar(10),
+status varchar(20) not null default("En curso"),
+    FOREIGN KEY (white) REFERENCES T_Players(ID),
+    FOREIGN KEY (black) REFERENCES T_Players(ID)
+);
+
+CREATE TABLE T_BoardStatus(
+ID int auto_increment, 
+IDGame int,
+board varchar(200), /* Modificar si es necesario */
+primary key(ID,IDGame),
+FOREIGN KEY (IDGame) REFERENCES T_Matches(ID)
 );
