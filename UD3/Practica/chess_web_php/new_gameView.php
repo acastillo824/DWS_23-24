@@ -34,14 +34,14 @@
                     echo "<select name=\"playerWhite\" id=\"playerWhite\">";
                         foreach ($infoPlayers as $players)
                         {
-                            echo "<option value=\"".$players->getID()."\">".$players->getName()."</option>";
+                            echo "<option value='".$players->getID()."'>".$players->getName()."</option>";
                         }
                     echo "</select><br><br>";
                     echo "<label for=\"\">Jugador Negras: </label>";
                     echo "<select name=\"playerBlack\" id=\"playerBlack\">";
                         foreach ($infoPlayers as $players)
                         {
-                            echo "<option value=\"".$players->getID()."\">".$players->getName()."</option>";
+                            echo "<option value='".$players->getID()."'>".$players->getName()."</option>";
                         }
                     echo "</select><br><br>";
    
