@@ -24,7 +24,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Descripción</th>
-                    <th>Fecha Inicio</th>
+                    <th>Fecha Inicio </th>
                     <th>Hora Inicion</th>
                     <th>Estado</th>
                     <th>Ganador</th>
@@ -39,7 +39,7 @@
                             require("matchBusiness.php");                
                             $matchesBL = new MatchBusiness();
                             $infoMatch = $matchesBL->getMatches();
-                                                       
+
                             foreach ($infoMatch as $match)
                             {
                                 echo "<tr>";

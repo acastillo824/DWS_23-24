@@ -58,4 +58,25 @@ class BoardDataAccess
         }
 		return $matches;
     }
+    function orderMatches()
+    {
+        $conexion = mysqli_connect('localhost','root','12345');
+		if (mysqli_connect_errno())
+		{
+				echo "Error al conectar a MySQL: ". mysqli_connect_error();
+		}
+ 		mysqli_select_db($conexion, 'Chess');
+		$consulta = mysqli_prepare($conexion, "SELECT ID, white, black, startDate, endDate, winner, status FROM Chess.T_Matches order by startDate desc;");
+        $consulta->execute();
+        $result = $consulta->get_result();
+
+        $matches = array();
+
+        while ($myrow = $result->fetch_assoc()) 
+        {
+			array_push($matches,$myrow);
+
+        }
+		return $matches;
+    }
 }

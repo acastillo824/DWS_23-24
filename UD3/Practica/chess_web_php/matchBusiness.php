@@ -57,4 +57,18 @@ class MatchBusiness
         
         return $matchesList;
     }
+    function orderMatches()
+    {
+        $matchesDAL = new BoardDataAccess();
+        $rs = $matchesDAL->orderMatches();
+		$matchesList =  array();
+        foreach ($rs as $matches)
+        {
+            $oMatchBusiness = new MatchBusiness();
+            $oMatchBusiness->Init($matches['ID'],$matches['white'],$matches['black'],$matches['startDate'],$matches['endDate'],$matches['winner'],$matches['status']);
+            array_push($matchesList,$oMatchBusiness);
+        }
+        
+        return $matchesList;
+    }
 }
