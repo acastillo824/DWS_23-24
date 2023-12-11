@@ -1,34 +1,40 @@
-CREATE SCHEMA Chess;
-
 USE Chess;
+
 DROP TABLE IF EXISTS T_BoardStatus;
-DROP TABLE IF exists T_Matches;
-DROP TABLE IF exists T_Players;
+DROP TABLE IF EXISTS T_Matches;
+DROP TABLE IF EXISTS T_Players;
+
+/*Todos los ID deben ser autoincrement*/
 
 CREATE TABLE T_Players(
-ID int primary key auto_increment,
-name varchar(30) not null,
-email varchar(50) UNIQUE,
-passwd varchar(30) not null
+	ID int auto_increment,
+    name varchar(30) not null unique,
+    email varchar(50) not null unique,
+    passwd varchar(30) not null,
+    PRIMARY KEY (ID)
 );
 
 CREATE TABLE T_Matches(
-ID int primary key auto_increment,
-title varchar(50) not null,
-white int not null,
-black int not null,
-startDate datetime not null,
-endDate datetime,
-winner varchar(10),
-status varchar(20) not null default("En curso"),
-    FOREIGN KEY (white) REFERENCES T_Players(ID),
-    FOREIGN KEY (black) REFERENCES T_Players(ID)
+	ID INTEGER AUTO_INCREMENT,
+    white int not null,
+    black int not null,
+    startDate datetime not null,
+    endDate datetime,
+    winner varchar(10),
+    status varchar(20) not null default('En Curso'),
+    foreign key (white) references T_Players(ID),
+    foreign key (black) references T_Players(ID),
+    PRIMARY KEY (ID)
 );
 
-CREATE TABLE T_BoardStatus(
-ID int auto_increment, 
-IDGame int,
-board varchar(200), /* Modificar si es necesario */
-primary key(ID,IDGame),
-FOREIGN KEY (IDGame) REFERENCES T_Matches(ID)
+create table T_BoardStatus(
+	ID int auto_increment,
+    ID_Match int,
+    board varchar(200),
+    foreign key (ID_Match) references T_Matches(ID),
+    primary key (ID, ID_Match)
 );
+
+insert into T_Players (name, email, passwd) VALUE ('Adrian','acastillolopez@iessonferrer.net','Ageofempires1'),
+													('Okolo', 'danielokolo@iessonferrer.net', 'Ageofempires2'),
+                                                    ('Elier', 'eliervazquez@iessonferrer.net', 'Ageofempires3');
