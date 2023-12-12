@@ -17,7 +17,7 @@
     <nav>
         <div id="menu">
             <a class='enlaces' href="new_gameView.php">Nueva Partida</a>
-            <a class='enlaces' href="gameListView.php">Lista de partidas</a>
+            <a class='enlaces' href="gameListView.php?order=asc">Lista de partidas</a>
         </div>
         
         <?php
