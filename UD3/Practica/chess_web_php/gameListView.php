@@ -19,7 +19,12 @@
             <a class='enlaces' href="index.php">Home</a>
             <a class='enlaces' href="new_gameView.php">Nueva Partida</a>
         </div>
+        <div id="filter">
+            <a class="orderButton" href="gameListView.php?order=asc">ASC</a>
+            <a class="orderButton" href="gameListView.php?order=desc">DESC</a>
+        </div>
         <div id='listaPartidas'>
+        <!-- Hacer un formulario que haga de filtro para la tabla -->
             <table>
                 <tr>
                     <th>ID</th>
@@ -36,10 +41,10 @@
                 <?php
                             ini_set('display_errors', 1);
                             ini_set('html_errors', 1);
+                            $orderList = $_GET['order'];
                             require("matchBusiness.php");                
                             $matchesBL = new MatchBusiness();
-                            $infoMatch = $matchesBL->getMatches();
-
+                            $infoMatch = $matchesBL->getMatches($orderList);
                             foreach ($infoMatch as $match)
                             {
                                 echo "<tr>";

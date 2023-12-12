@@ -43,24 +43,10 @@ class MatchBusiness
     function getStatus(){
         return $this->_Status;
     }
-    function getMatches()
+    function getMatches($orderList)
     {
         $matchesDAL = new BoardDataAccess();
-        $rs = $matchesDAL->getMatches();
-		$matchesList =  array();
-        foreach ($rs as $matches)
-        {
-            $oMatchBusiness = new MatchBusiness();
-            $oMatchBusiness->Init($matches['ID'],$matches['white'],$matches['black'],$matches['startDate'],$matches['endDate'],$matches['winner'],$matches['status']);
-            array_push($matchesList,$oMatchBusiness);
-        }
-        
-        return $matchesList;
-    }
-    function orderMatches()
-    {
-        $matchesDAL = new BoardDataAccess();
-        $rs = $matchesDAL->orderMatches();
+        $rs = $matchesDAL->getMatches($orderList);
 		$matchesList =  array();
         foreach ($rs as $matches)
         {

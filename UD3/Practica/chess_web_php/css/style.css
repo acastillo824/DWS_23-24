@@ -12,7 +12,7 @@ header
 
     padding-top: 10px;
 
-    background-color: rgb(179, 177, 177);
+    /* background-color: rgb(179, 177, 177); */
 
     text-align: center;
     color: white;
@@ -45,7 +45,7 @@ footer
     width: 100%;
     padding: 10px;
     
-    background-color: grey;
+    /* background-color: grey; */
 }
 
 #formulario
@@ -57,8 +57,13 @@ footer
     text-align: center;
 
     border: 2px solid black;
+    background-color: rgba(0, 0, 0, 0.301);
 }
-
+#filter
+{
+    /* background-color: rgb(80, 80, 80); */
+    text-align: center; 
+}
 /*CLASS*/
 
 .enlaces
@@ -84,6 +89,13 @@ footer
     border: 1px solid black;
     border-radius: 3px;
     box-shadow: 4px -2px 2px black;
+}
+.orderButton
+{
+    color: black;
+ text-decoration: none;
+ padding: 1px   ;
+ border: 1px solid black;  
 }
 
 /*OBJETOS*/
