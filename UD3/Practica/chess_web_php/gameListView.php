@@ -3,27 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styleList.css">
     <link rel="icon" type="image/x-icon" href="img/peon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>CHESS_CastilloAdrian</title>
 </head>
 <body>
-
     <header>
-        <h1 id="titulo">Lista de Partidas</h1>
+        <h1 id="title">Lista de Partidas</h1>
     </header>
 
     <nav>
         <div id="menu">
-            <a class='enlaces' href="index.php">Home</a>
-            <a class='enlaces' href="new_gameView.php">Nueva Partida</a>
+            <a class='link' href="index.php">Home</a>
+            <a class='link' href="new_gameView.php">Nueva Partida</a>
         </div>
         <div id="filter">
+            <h3>Fecha:</h3>
             <a class="orderButton" href="gameListView.php?order=asc">ASC</a>
             <a class="orderButton" href="gameListView.php?order=desc">DESC</a>
         </div>
-        <div id='listaPartidas'>
+        <div id='matchList'>
         <!-- Hacer un formulario que haga de filtro para la tabla -->
             <table>
                 <tr>
@@ -65,7 +65,9 @@
         </div>
     </nav>
 
-    <footer></footer>
+    <footer>
+        by Adrian Castillo©
+    </footer>
 
 </body>
 </html>
