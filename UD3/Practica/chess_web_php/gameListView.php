@@ -42,14 +42,15 @@
                             ini_set('display_errors', 1);
                             ini_set('html_errors', 1);
                             $orderList = $_GET['order'];
-                            require("matchBusiness.php");                
+                            require("matchBusiness.php");               
                             $matchesBL = new MatchBusiness();
                             $infoMatch = $matchesBL->getMatches($orderList);
+                            $dateList = array();
                             foreach ($infoMatch as $match)
                             {
                                 echo "<tr>";
                                 print('<td>'.$match->getID().'</td>');
-                                print('<td><a href="boardView.php?idMatch='.$match->getID().'">'.$match->getID().'</a></td>');
+                                print('<td><a href="boardView.php?idMatch='.$match->getID().'">'.$match->getTitle().'</a></td>');
                                 print('<td>'.$match->getStartDate().'</td>');
                                 print('<td>'.$match->getStartDate().'</td>');
                                 print('<td>'.$match->getStatus().'</td>');

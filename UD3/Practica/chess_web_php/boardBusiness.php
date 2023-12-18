@@ -41,15 +41,15 @@ class BoardBusiness
         foreach ($rs as $players)
         {
             $oBoardBusiness = new BoardBusiness();
-            $oBoardBusiness->Init($players['ID'],$players['name'],$players['email'],$players['passwd']);
+            $oBoardBusiness->Init($players['ID'], $players['name'],$players['email'],$players['passwd']);
             array_push($playersList,$oBoardBusiness);
         }
         
         return $playersList;
     }
-    function insertMatch($idPLWH, $idPLBL)
+    function insertMatch($idPLWH, $idPLBL,$matchName)
     {
         $playersDAL = new BoardDataAccess();
-        $playersDAL->insertMatch($idPLWH, $idPLBL);
+        $playersDAL->insertMatch($idPLWH, $idPLBL, $matchName);
     }
 }

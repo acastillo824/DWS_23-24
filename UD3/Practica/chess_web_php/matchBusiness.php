@@ -5,6 +5,7 @@ require('boardDataAccess.php');
 class MatchBusiness
 {
     private $_ID;
+    private $_Title;
     private $_White;
     private $_Black;
     private $_StartDate;
@@ -12,9 +13,10 @@ class MatchBusiness
     private $_Winner;
     private $_Status;
     function __construct(){}
-    function init($id, $white, $black, $startDate, $endDate, $winner, $status)
+    function init($id, $title, $white, $black, $startDate, $endDate, $winner, $status)
     {
         $this->_ID = $id;
+        $this->_Title = $title;
         $this->_White = $white;
         $this->_Black = $black;
         $this->_StartDate = $startDate;
@@ -24,6 +26,9 @@ class MatchBusiness
     }
     function getID(){
         return $this->_ID;
+    }
+    function getTitle(){
+        return $this->_Title;
     }
     function getWhite(){
         return $this->_White;
@@ -51,10 +56,27 @@ class MatchBusiness
         foreach ($rs as $matches)
         {
             $oMatchBusiness = new MatchBusiness();
-            $oMatchBusiness->Init($matches['ID'],$matches['white'],$matches['black'],$matches['startDate'],$matches['endDate'],$matches['winner'],$matches['status']);
+            $oMatchBusiness->Init($matches['ID'],$matches['title'], $matches['white'],$matches['black'],$matches['startDate'],$matches['endDate'],$matches['winner'],$matches['status']);
             array_push($matchesList,$oMatchBusiness);
         }
         
         return $matchesList;
     }
+    function separateDate()
+    {
+        $orderList = 'asc';
+        $matchesBL = new MatchBusiness();
+        $infoMatch = $matchesBL->getMatches($orderList);
+        $startDateList = array();
+        $dateList = array();
+        foreach ($infoMatch as $match) {
+            array_push($startDateList, $match->getStartDate());
+        }
+        for ($i=0; $i < count($startDateList); $i++) { 
+            print($startDateList[$i]."<br>");
+        }
+    }
 }
+// Codigo para probar que la funcion funciona XD, valga la redundancia.
+$x = new MatchBusiness();
+$x->separateDate();
