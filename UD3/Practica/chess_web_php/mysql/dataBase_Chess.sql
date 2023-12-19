@@ -16,7 +16,7 @@ CREATE TABLE T_Players(
 
 CREATE TABLE T_Matches(
 	ID INTEGER AUTO_INCREMENT,
-    title VARCHAR(20),
+    title varchar(20),
     white int not null,
     black int not null,
     startDate datetime not null,
@@ -40,4 +40,40 @@ insert into T_Players (name, email, passwd) VALUE ('Adrian','acastillolopez@iess
 													('Okolo', 'danielokolo@iessonferrer.net', 'Ageofempires2'),
                                                     ('Elier', 'eliervazquez@iessonferrer.net', 'Ageofempires3');
                                                     
-SELECT * FROM T_Matches;
+/*Tabla A*/
+SELECT 
+	ID,
+    name 
+FROM 
+	T_Players;
+    
+/*Tabla B*/
+
+SELECT
+    ID as 'ID Partida',
+    white as 'ID_Jugador_Blancas',
+    black as 'ID_Jugador_Negras'
+FROM
+	T_Matches;
+    
+/*Campo de pruebas*/
+
+select
+	T_Matches.ID,
+    title,
+    startDate,
+    status,
+    winner,
+    endDate,
+    T_Players1.name as 'Jugador_Blancas',
+    T_Players2.name as 'Jugador_Negras'
+from
+	T_Matches 
+inner join T_Players as T_Players1 on T_Players1.ID = T_Matches.white
+inner join T_Players as T_Players2 on T_Players2.ID = T_Matches.black
+order by startDate ASC; 
+    
+    
+    
+    
+    
