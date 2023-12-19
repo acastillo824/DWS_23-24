@@ -73,10 +73,8 @@ class MatchBusiness
             array_push($startDateList, $match->getStartDate());
         }
         for ($i=0; $i < count($startDateList); $i++) { 
-            print($startDateList[$i]."<br>");
+            $dateList[$i] = explode(' ', $startDateList[$i]);
         }
+        return $dateList;
     }
 }
-// Codigo para probar que la funcion funciona XD, valga la redundancia.
-$x = new MatchBusiness();
-$x->separateDate();

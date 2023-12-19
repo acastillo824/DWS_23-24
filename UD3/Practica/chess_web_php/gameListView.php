@@ -45,14 +45,16 @@
                             require("matchBusiness.php");               
                             $matchesBL = new MatchBusiness();
                             $infoMatch = $matchesBL->getMatches($orderList);
-                            $dateList = array();
+                            $arrayDate = $matchesBL->separateDate();
+                            $x = 0;
                             foreach ($infoMatch as $match)
                             {
                                 echo "<tr>";
                                 print('<td>'.$match->getID().'</td>');
                                 print('<td><a href="boardView.php?idMatch='.$match->getID().'">'.$match->getTitle().'</a></td>');
-                                print('<td>'.$match->getStartDate().'</td>');
-                                print('<td>'.$match->getStartDate().'</td>');
+                                print('<td>'.$arrayDate[$x][0].'</td>');
+                                print('<td>'.$arrayDate[$x][1].'</td>');
+                                $x++;
                                 print('<td>'.$match->getStatus().'</td>');
                                 print('<td>'.$match->getWinner().'</td>');
                                 print('<td>'.$match->getEndDate().'</td>');
@@ -61,6 +63,7 @@
                                 print('<td>'.$match->getBlack().'</td>');
                                 echo "</tr>";
                             }
+                            
                         ?>
             </table>
         </div>

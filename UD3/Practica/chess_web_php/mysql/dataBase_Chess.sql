@@ -16,6 +16,7 @@ CREATE TABLE T_Players(
 
 CREATE TABLE T_Matches(
 	ID INTEGER AUTO_INCREMENT,
+    title VARCHAR(20),
     white int not null,
     black int not null,
     startDate datetime not null,
@@ -38,3 +39,5 @@ create table T_BoardStatus(
 insert into T_Players (name, email, passwd) VALUE ('Adrian','acastillolopez@iessonferrer.net','Ageofempires1'),
 													('Okolo', 'danielokolo@iessonferrer.net', 'Ageofempires2'),
                                                     ('Elier', 'eliervazquez@iessonferrer.net', 'Ageofempires3');
+                                                    
+SELECT * FROM T_Matches;
