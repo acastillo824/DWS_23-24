@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "/home/carlos/.nuget/packages/": {}
+    "/home/horabaixa/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/carlos/Escritorio/solucion examen/Pregunta 5/solucion_pregunta/solucion_pregunta_5.csproj",
+      "projectUniqueName": "/var/www/html/Castillo5115/DWS_23-24/SolucionesExamenes/solucionExamen_1y2/solucion examen/Pregunta 5/solucion_pregunta/solucion_pregunta_5.csproj",
       "projectName": "solucion_pregunta_5",
-      "projectPath": "/home/carlos/Escritorio/solucion examen/Pregunta 5/solucion_pregunta/solucion_pregunta_5.csproj",
-      "packagesPath": "/home/carlos/.nuget/packages/",
-      "outputPath": "/home/carlos/Escritorio/solucion examen/Pregunta 5/solucion_pregunta/obj/",
+      "projectPath": "/var/www/html/Castillo5115/DWS_23-24/SolucionesExamenes/solucionExamen_1y2/solucion examen/Pregunta 5/solucion_pregunta/solucion_pregunta_5.csproj",
+      "packagesPath": "/home/horabaixa/.nuget/packages/",
+      "outputPath": "/var/www/html/Castillo5115/DWS_23-24/SolucionesExamenes/solucionExamen_1y2/solucion examen/Pregunta 5/solucion_pregunta/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/carlos/.nuget/NuGet/NuGet.Config"
+        "/home/horabaixa/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"

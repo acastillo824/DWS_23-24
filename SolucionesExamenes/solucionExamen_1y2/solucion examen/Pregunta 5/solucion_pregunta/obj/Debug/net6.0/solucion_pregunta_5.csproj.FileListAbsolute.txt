@@ -28,3 +28,18 @@
 /home/carlos/Escritorio/2324/DWS/EXAMENES/UD1_UD2/solucion_pregunta_5_sin_punt/obj/Debug/net6.0/ref/solucion_pregunta_5.dll
 /home/carlos/Escritorio/2324/DWS/EXAMENES/UD1_UD2/solucion_pregunta_5_sin_punt/obj/Debug/net6.0/solucion_pregunta_5.pdb
 /home/carlos/Escritorio/2324/DWS/EXAMENES/UD1_UD2/solucion_pregunta_5_sin_punt/obj/Debug/net6.0/solucion_pregunta_5.genruntimeconfig.cache
+/var/www/html/Castillo5115/DWS_23-24/SolucionesExamenes/solucionExamen_1y2/solucion examen/Pregunta 5/solucion_pregunta/bin/Debug/net6.0/solucion_pregunta_5
+/var/www/html/Castillo5115/DWS_23-24/SolucionesExamenes/solucionExamen_1y2/solucion examen/Pregunta 5/solucion_pregunta/bin/Debug/net6.0/solucion_pregunta_5.deps.json
+/var/www/html/Castillo5115/DWS_23-24/SolucionesExamenes/solucionExamen_1y2/solucion examen/Pregunta 5/solucion_pregunta/bin/Debug/net6.0/solucion_pregunta_5.runtimeconfig.json
+/var/www/html/Castillo5115/DWS_23-24/SolucionesExamenes/solucionExamen_1y2/solucion examen/Pregunta 5/solucion_pregunta/bin/Debug/net6.0/solucion_pregunta_5.dll
+/var/www/html/Castillo5115/DWS_23-24/SolucionesExamenes/solucionExamen_1y2/solucion examen/Pregunta 5/solucion_pregunta/bin/Debug/net6.0/ref/solucion_pregunta_5.dll
+/var/www/html/Castillo5115/DWS_23-24/SolucionesExamenes/solucionExamen_1y2/solucion examen/Pregunta 5/solucion_pregunta/bin/Debug/net6.0/solucion_pregunta_5.pdb
+/var/www/html/Castillo5115/DWS_23-24/SolucionesExamenes/solucionExamen_1y2/solucion examen/Pregunta 5/solucion_pregunta/obj/Debug/net6.0/solucion_pregunta_5.csproj.AssemblyReference.cache
+/var/www/html/Castillo5115/DWS_23-24/SolucionesExamenes/solucionExamen_1y2/solucion examen/Pregunta 5/solucion_pregunta/obj/Debug/net6.0/solucion_pregunta_5.GeneratedMSBuildEditorConfig.editorconfig
+/var/www/html/Castillo5115/DWS_23-24/SolucionesExamenes/solucionExamen_1y2/solucion examen/Pregunta 5/solucion_pregunta/obj/Debug/net6.0/solucion_pregunta_5.AssemblyInfoInputs.cache
+/var/www/html/Castillo5115/DWS_23-24/SolucionesExamenes/solucionExamen_1y2/solucion examen/Pregunta 5/solucion_pregunta/obj/Debug/net6.0/solucion_pregunta_5.AssemblyInfo.cs
+/var/www/html/Castillo5115/DWS_23-24/SolucionesExamenes/solucionExamen_1y2/solucion examen/Pregunta 5/solucion_pregunta/obj/Debug/net6.0/solucion_pregunta_5.csproj.CoreCompileInputs.cache
+/var/www/html/Castillo5115/DWS_23-24/SolucionesExamenes/solucionExamen_1y2/solucion examen/Pregunta 5/solucion_pregunta/obj/Debug/net6.0/solucion_pregunta_5.dll
+/var/www/html/Castillo5115/DWS_23-24/SolucionesExamenes/solucionExamen_1y2/solucion examen/Pregunta 5/solucion_pregunta/obj/Debug/net6.0/ref/solucion_pregunta_5.dll
+/var/www/html/Castillo5115/DWS_23-24/SolucionesExamenes/solucionExamen_1y2/solucion examen/Pregunta 5/solucion_pregunta/obj/Debug/net6.0/solucion_pregunta_5.pdb
+/var/www/html/Castillo5115/DWS_23-24/SolucionesExamenes/solucionExamen_1y2/solucion examen/Pregunta 5/solucion_pregunta/obj/Debug/net6.0/solucion_pregunta_5.genruntimeconfig.cache
