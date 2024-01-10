@@ -12,8 +12,8 @@
 
     <header>
         <div id="titleFrontPage">
+            <a id="logIn" href="View/loginView.php">Registrarse</a>
             <h1>BIENVENIDO A CHESS.net</h1>
-            <a href=""></a>
         </div>
         <div id="imageFrontPage">
             <img id="imagePawn" src="img/peon.png" alt="Peon Portada">
