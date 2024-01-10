@@ -14,7 +14,7 @@ class TorneosAccesoDatos
 		{
 				echo "Error al conectar a MySQL: ". mysqli_connect_error();
 		}
- 		mysqli_select_db($conexion, 'torneosTenisMesaDB');
+ 		mysqli_select_db($conexion, 'database_Chess');
 		$consulta = mysqli_prepare($conexion, "SELECT ID FROM T_Torneos ");
         $consulta->execute();
         $result = $consulta->get_result();

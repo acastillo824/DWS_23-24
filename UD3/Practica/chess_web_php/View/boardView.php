@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" type="image/x-icon" href="img/peon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>CHESS_CastilloAdrian</title>
@@ -21,9 +21,7 @@
         </div>
         
         <?php
-            // ini_set('display_errors', 1);
-            // ini_set('html_errors', 1);
-            require("boardBusiness.php");
+            require("../Business/boardBusiness.php");
             $playersBL = new BoardBusiness();            
             $idWHPlayer = $_POST["playerWhite"];
             $idBLPlayer = $_POST["playerBlack"];

@@ -1,7 +1,7 @@
 <?php
 ini_set('display_errors', 1);
 ini_set('html_errors', 1);
-require('boardDataAccess.php');
+require('../DataAcces/boardDataAccess.php');
 class MatchBusiness
 {
     private $_ID;

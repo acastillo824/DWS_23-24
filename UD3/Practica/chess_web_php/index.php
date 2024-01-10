@@ -13,6 +13,7 @@
     <header>
         <div id="titleFrontPage">
             <h1>BIENVENIDO A CHESS.net</h1>
+            <a href=""></a>
         </div>
         <div id="imageFrontPage">
             <img id="imagePawn" src="img/peon.png" alt="Peon Portada">
@@ -21,8 +22,8 @@
 
     <nav>
         <div id="menu">
-            <a class='links' href="new_gameView.php">Nueva Partida</a>
-            <a class='links' href="gameListView.php?order=asc">Lista de partidas</a>
+            <a class='links' href="View/new_gameView.php">Nueva Partida</a>
+            <a class='links' href="View/gameListView.php?order=asc">Lista de partidas</a>
         </div>
     </nav>
 

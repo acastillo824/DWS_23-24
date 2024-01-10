@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styleNewGame.css">
+    <link rel="stylesheet" href="../css/styleNewGame.css">
     <link rel="icon" type="image/x-icon" href="img/peon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>CHESS_CastilloAdrian</title>
@@ -16,7 +16,7 @@
 
     <nav>
         <div id="menu">
-            <a class='link' href="index.php">Home</a>
+            <a class='link' href="../index.php">Home</a>
             <a class='link' href="gameListView.php?order=asc">Lista de partidas</a>
         </div>
         <h2>Formulario de registro:</h2>
@@ -25,7 +25,7 @@
                 ini_set('display_errors', 1);
                 ini_set('html_errors', 1);
 
-                require("boardBusiness.php");
+                require("../Business/boardBusiness.php");
 
                 $playersBL = new BoardBusiness();
                 $infoPlayers = $playersBL->getPlayers();

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styleList.css">
+    <link rel="stylesheet" href="../css/styleList.css">
     <link rel="icon" type="image/x-icon" href="img/peon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>CHESS_CastilloAdrian</title>
@@ -15,7 +15,7 @@
 
     <nav>
         <div id="menu">
-            <a class='link' href="index.php">Home</a>
+            <a class='link' href="../index.php">Home</a>
             <a class='link' href="new_gameView.php">Nueva Partida</a>
         </div>
         <div id="filter">
@@ -42,7 +42,7 @@
                             ini_set('display_errors', 1);
                             ini_set('html_errors', 1);
                             $orderList = $_GET['order'];
-                            require("matchBusiness.php");               
+                            require("../Business/matchBusiness.php");               
                             $matchesBL = new MatchBusiness();
                             $infoMatch = $matchesBL->getMatches($orderList);
                             $arrayDate = $matchesBL->separateDate();

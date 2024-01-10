@@ -40,20 +40,10 @@
             function esPieza($pieza)
             {
                 if ($pieza[0] == 'R' && $pieza[3] == 'L'|| $pieza[0] == 'K' && $pieza[3] == 'L'|| $pieza[0] == 'B' && $pieza[3] == 'L'|| $pieza[0] == 'Q' && $pieza[3] == 'L'|| $pieza[0] == 'P'&& $pieza[3] == 'L') {
-                    // if ($pieza == 'PABL') {
-                    //     echo "<td class=\"box\"><img src=\"img/peon_negro.png\" alt=\"\"></td>";
-                    // }
-                    // else{
-                    //     echo "<td class=\"box\">".$pieza."</td>";
-                    // }
+                    
                     echo "<td class=\"black\">".$pieza."</td>";
                 }else if($pieza[0] == 'R' && $pieza[3] == 'H'|| $pieza[0] == 'K' && $pieza[3] == 'H'|| $pieza[0] == 'B' && $pieza[3] == 'H'|| $pieza[0] == 'Q' && $pieza[3] == 'H'|| $pieza[0] == 'P'&& $pieza[3] == 'H'){
-                    // if ($pieza == 'PAWH') {
-                    //     echo "<td class=\"box\"><img src=\"img/peon_negro.png\" alt=\"\"></td>";
-                    // }
-                    // else{
-                    //     echo "<td class=\"box\">".$pieza."</td>";
-                    // }
+                    
                     echo "<td class=\"white\">".$pieza."</td>";
                 }else {
                     echo '<td class=\"white\"></td>';
