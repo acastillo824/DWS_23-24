@@ -25,7 +25,7 @@ class BoardDataAccess
         }
 		return $players;
     }
-    function insertPlayers($name, $email, $passwd, $perfil)
+    function insertPlayers($name, $email, $passwd, $user)
     {
         $conexion = mysqli_connect('localhost','root','12345');
 		if (mysqli_connect_errno())
@@ -33,10 +33,46 @@ class BoardDataAccess
 				echo "Error al conectar a MySQL: ". mysqli_connect_error();
 		}
  		mysqli_select_db($conexion, 'Chess');
-		$consulta = mysqli_prepare($conexion, "INSERT INTO T_Players (ID, name, email, passwd, perfil) VALUE (?,?,?,?) FROM Chess.T_Players");
+		$consulta = mysqli_prepare($conexion, "INSERT INTO T_Players (ID, name, email, passwd, premium) VALUE (?,?,?,?);");
         $hash = password_hash($passwd, PASSWORD_DEFAULT);
-        $consulta->bind_param("sss", $name,$email,$hash,$perfil);
+        $consulta->bind_param("sss", $name,$email,$hash,$user);
         $consulta->execute();
+    }
+    function verifyPlayer($user, $passwd, $premium)
+    {
+        $conexion = mysqli_connect('localhost','root','12345');
+		if (mysqli_connect_errno())
+		{
+				echo "Error al conectar a MySQL: ". mysqli_connect_error();
+		}
+        mysqli_select_db($conexion, 'Chess');
+        $consulta = mysqli_prepare($conexion, "select name,passwd,premium from T_Players where name = ?;");
+        $sanitized_usuario = mysqli_real_escape_string($conexion, $user);       
+        $consulta->bind_param("s", $sanitized_usuario);
+        $consulta->execute();
+        $res = $consulta->get_result();
+
+
+        if ($res->num_rows==0)
+        {
+            return 'NOT_FOUND';
+        }
+
+        if ($res->num_rows>1) //El nombre de usuario debería ser único.
+        {
+            return 'NOT_FOUND';
+        }
+
+        $myrow = $res->fetch_assoc();
+        $x = $myrow['passwd'];
+        if (password_verify($passwd, $x))
+        {
+            return $myrow['premium'];
+        } 
+        else 
+        {
+            return 'NOT_FOUND';
+        }
     }
     function insertMatch($idPLWH, $idPLBL, $matchName)
     {
