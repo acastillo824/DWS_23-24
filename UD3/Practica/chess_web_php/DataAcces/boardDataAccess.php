@@ -25,7 +25,7 @@ class BoardDataAccess
         }
 		return $players;
     }
-    function insertPlayers($name, $email, $passwd, $user)
+    function insertPlayers($name, $email, $passwd, $profileType)
     {
         $conexion = mysqli_connect('localhost','root','12345');
 		if (mysqli_connect_errno())
@@ -33,12 +33,12 @@ class BoardDataAccess
 				echo "Error al conectar a MySQL: ". mysqli_connect_error();
 		}
  		mysqli_select_db($conexion, 'Chess');
-		$consulta = mysqli_prepare($conexion, "INSERT INTO T_Players (ID, name, email, passwd, premium) VALUE (?,?,?,?);");
+		$consulta = mysqli_prepare($conexion, "INSERT INTO T_Players (ID, name, email, passwd, profileType) VALUE (?,?,?,?);");
         $hash = password_hash($passwd, PASSWORD_DEFAULT);
-        $consulta->bind_param("sss", $name,$email,$hash,$user);
+        $consulta->bind_param("sss", $name,$email,$hash,$profileType);
         $consulta->execute();
     }
-    function verifyPlayer($user, $passwd, $premium)
+    function verifyPlayer($name, $passwd, $profileType)
     {
         $conexion = mysqli_connect('localhost','root','12345');
 		if (mysqli_connect_errno())
@@ -46,8 +46,8 @@ class BoardDataAccess
 				echo "Error al conectar a MySQL: ". mysqli_connect_error();
 		}
         mysqli_select_db($conexion, 'Chess');
-        $consulta = mysqli_prepare($conexion, "select name,passwd,premium from T_Players where name = ?;");
-        $sanitized_usuario = mysqli_real_escape_string($conexion, $user);       
+        $consulta = mysqli_prepare($conexion, "select namePlayer,passwd,profileType from T_Players where name = ?;");
+        $sanitized_usuario = mysqli_real_escape_string($conexion, $name);       
         $consulta->bind_param("s", $sanitized_usuario);
         $consulta->execute();
         $res = $consulta->get_result();
@@ -67,7 +67,7 @@ class BoardDataAccess
         $x = $myrow['passwd'];
         if (password_verify($passwd, $x))
         {
-            return $myrow['premium'];
+            return $myrow['profileType'];
         } 
         else 
         {

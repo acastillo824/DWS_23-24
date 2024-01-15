@@ -8,15 +8,15 @@ class PlayersBusiness
     private $_Name;
     private $_Email;
     private $_Passwd;
-    private $_Premium;
+    private $_ProfileType;
     function __construct(){}
-    function init($id, $name, $email, $passwd, $premium)
+    function init($id, $name, $email, $passwd, $profileType)
     {
         $this->_ID = $id;
         $this->_Name = $name;
         $this->_Email = $email;
         $this->_Passwd = $passwd;
-        $this->_User = $premium;
+        $this->_ProfileType = $profileType;
     }
     function getId()
     {
@@ -34,19 +34,19 @@ class PlayersBusiness
     {
         $this->_Passwd;
     }
-    function getPremium()
+    function getProfileType()
     {
-        $this->_Premium;
+        $this->_ProfileType;
     }
-    function insertPlayer($name, $email, $passwd, $premium)
+    function insertPlayer($name, $email, $passwd, $profileType)
     {
         $playersDAL = new BoardDataAccess();
-        $playersDAL->insertPlayers($name, $email, $passwd, $premium);
+        $playersDAL->insertPlayers($name, $email, $passwd, $profileType);
     }
-    function verifyPlayer($name, $passwd, $premium)
+    function verifyPlayer($name, $passwd, $profileType)
     {
         $playerDAL = new BoardDataAccess();
-        $res = $playerDAL->verifyPlayer($name,$passwd, $premium);
+        $res = $playerDAL->verifyPlayer($name,$passwd, $profileType);
         
         return $res;
     }
