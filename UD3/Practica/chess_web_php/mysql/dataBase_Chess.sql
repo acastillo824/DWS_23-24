@@ -8,9 +8,10 @@ DROP TABLE IF EXISTS T_Players;
 
 CREATE TABLE T_Players(
 	ID int auto_increment,
-    name varchar(30) not null unique,
+    namePlayer varchar(30) not null unique,
     email varchar(50) not null unique,
     passwd varchar(30) not null,
+    profileType varchar(15) not null,	
     PRIMARY KEY (ID)
 );
 
@@ -36,29 +37,53 @@ create table T_BoardStatus(
     primary key (ID, ID_Match)
 );
 
-insert into T_Players (name, email, passwd) VALUE ('Adrian','acastillolopez@iessonferrer.net','Ageofempires1'),
-													('Okolo', 'danielokolo@iessonferrer.net', 'Ageofempires2'),
-                                                    ('Elier', 'eliervazquez@iessonferrer.net', 'Ageofempires3');
-                                                    
+insert into T_Players (namePlayer, email, passwd, profileType) VALUE ('Adrian','acastillolopez@iessonferrer.net','12345', 'premium'),
+															('Okolo', 'danielokolo@iessonferrer.net', '12345', 'normal');
+
+
+select namePlayer,passwd,profileType from T_Players where namePlayer = 'Adrian';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*Tabla A*/
-SELECT 
+/* SELECT 
 	ID,
     name 
 FROM 
-	T_Players;
+	T_Players; */
     
 /*Tabla B*/
 
-SELECT
+/* SELECT
     ID as 'ID Partida',
     white as 'ID_Jugador_Blancas',
     black as 'ID_Jugador_Negras'
 FROM
-	T_Matches;
+	T_Matches; */
     
 /*Campo de pruebas*/
 
-select
+/* select
 	T_Matches.ID,
     title,
     startDate,
@@ -70,8 +95,7 @@ select
 from
 	T_Matches 
 inner join T_Players as T_Players1 on T_Players1.ID = T_Matches.white
-inner join T_Players as T_Players2 on T_Players2.ID = T_Matches.black
-order by startDate ASC; 
+inner join T_Players as T_Players2 on T_Players2.ID = T_Matches.black; */
     
     
     
