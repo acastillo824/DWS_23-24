@@ -12,7 +12,7 @@ class BoardDataAccess
 				echo "Error al conectar a MySQL: ". mysqli_connect_error();
 		}
  		mysqli_select_db($conexion, 'Chess');
-		$consulta = mysqli_prepare($conexion, "SELECT ID, name, email, passwd, perfil FROM Chess.T_Players");
+		$consulta = mysqli_prepare($conexion, "SELECT ID, namePlayer, email, passwd, profileType FROM Chess.T_Players");
         $consulta->execute();
         $result = $consulta->get_result();
 
@@ -25,20 +25,23 @@ class BoardDataAccess
         }
 		return $players;
     }
-    function insertPlayers($name, $email, $passwd, $profileType)
+    function insertPlayers($namePlayer, $email, $passwd, $profileType)
     {
         $conexion = mysqli_connect('localhost','root','12345');
 		if (mysqli_connect_errno())
 		{
 				echo "Error al conectar a MySQL: ". mysqli_connect_error();
 		}
- 		mysqli_select_db($conexion, 'Chess');
-		$consulta = mysqli_prepare($conexion, "INSERT INTO T_Players (ID, name, email, passwd, profileType) VALUE (?,?,?,?);");
+         		
+        mysqli_select_db($conexion, 'Chess');
+		$consulta = mysqli_prepare($conexion, "INSERT INTO T_Players (namePlayer,email,passwd,profileType) VALUES (?,?,?,?);");
         $hash = password_hash($passwd, PASSWORD_DEFAULT);
-        $consulta->bind_param("sss", $name,$email,$hash,$profileType);
-        $consulta->execute();
+        $consulta->bind_param("ssss", $namePlayer,$email,$hash,$profileType);
+        $res = $consulta->execute();
+        
+		return $res;
     }
-    function verifyPlayer($name, $passwd, $profileType)
+    function verifyPlayer($namePlayer, $passwd)
     {
         $conexion = mysqli_connect('localhost','root','12345');
 		if (mysqli_connect_errno())
@@ -46,8 +49,8 @@ class BoardDataAccess
 				echo "Error al conectar a MySQL: ". mysqli_connect_error();
 		}
         mysqli_select_db($conexion, 'Chess');
-        $consulta = mysqli_prepare($conexion, "select namePlayer,passwd,profileType from T_Players where name = ?;");
-        $sanitized_usuario = mysqli_real_escape_string($conexion, $name);       
+        $consulta = mysqli_prepare($conexion, "SELECT ID, namePlayer,passwd,profileType FROM T_Players WHERE namePlayer = ?;");
+        $sanitized_usuario = mysqli_real_escape_string($conexion, $namePlayer);       
         $consulta->bind_param("s", $sanitized_usuario);
         $consulta->execute();
         $res = $consulta->get_result();
@@ -65,6 +68,7 @@ class BoardDataAccess
 
         $myrow = $res->fetch_assoc();
         $x = $myrow['passwd'];
+        var_dump($passwd);
         if (password_verify($passwd, $x))
         {
             return $myrow['profileType'];

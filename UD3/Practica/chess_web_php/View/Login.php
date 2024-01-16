@@ -5,18 +5,12 @@
     if ($_SERVER["REQUEST_METHOD"]=="POST")
     {
         $usuarioBL = new PlayersBusiness();
-        $perfil =  $usuarioBL->verifyPlayer($_POST['name'],$_POST['passwd'], $_POST['status']);
-
-        // print($_POST['name']."<br>");
-        // print($_POST['passwd']."<br>");
-        // print($_POST['status']."<br>");
-
-        // var_dump($perfil);
-
+        $perfil =  $usuarioBL->verifyPlayer($_POST['name'],$_POST['passwd']);
+        
         if ($perfil != 'NOT_FOUND')
         {
             session_start(); //inicia o reinicia una sesión
-            $_SESSION['name'] = $_POST['name'];
+            $_SESSION['namePlayer'] = $_POST['name'];
             header("Location: ../index.php");
         }
         else
@@ -37,10 +31,6 @@
         <input id="name" name = "name" type = "text">
         <label for = "passwd"> Contraseña: </label>
         <input id = "passwd" name = "passwd" type = "password">
-        <input type="radio" id="premium" name="status" value="premium">
-        <label for="html">Premium</label>
-        <input type="radio" id="normal" name="status" value="normal">
-        <label for="html">Normal</label>
         <input type = "submit">
     </form>
     <?php

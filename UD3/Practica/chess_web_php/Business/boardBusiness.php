@@ -41,7 +41,7 @@ class BoardBusiness
         foreach ($rs as $players)
         {
             $oBoardBusiness = new BoardBusiness();
-            $oBoardBusiness->Init($players['ID'], $players['name'],$players['email'],$players['passwd']);
+            $oBoardBusiness->Init($players['ID'], $players['namePlayer'],$players['email'],$players['passwd']);
             array_push($playersList,$oBoardBusiness);
         }
         

@@ -5,15 +5,15 @@ require('../DataAcces/boardDataAccess.php');
 class PlayersBusiness
 {
     private $_ID;
-    private $_Name;
+    private $_NamePlayer;
     private $_Email;
     private $_Passwd;
     private $_ProfileType;
     function __construct(){}
-    function init($id, $name, $email, $passwd, $profileType)
+    function init($id, $namePlayer, $email, $passwd, $profileType)
     {
         $this->_ID = $id;
-        $this->_Name = $name;
+        $this->_NamePlayer = $namePlayer;
         $this->_Email = $email;
         $this->_Passwd = $passwd;
         $this->_ProfileType = $profileType;
@@ -22,9 +22,9 @@ class PlayersBusiness
     {
         $this->_ID;
     }
-    function getName()
+    function getNamePlayer()
     {
-        $this->_Name;
+        $this->_NamePlayer;
     }
     function getEmail()
     {
@@ -38,15 +38,15 @@ class PlayersBusiness
     {
         $this->_ProfileType;
     }
-    function insertPlayer($name, $email, $passwd, $profileType)
+    function insertPlayers($namePlayer, $email, $passwd, $profileType)
     {
         $playersDAL = new BoardDataAccess();
-        $playersDAL->insertPlayers($name, $email, $passwd, $profileType);
+        $playersDAL->insertPlayers($namePlayer, $email, $passwd, $profileType);
     }
-    function verifyPlayer($name, $passwd, $profileType)
+    function verifyPlayer($namePlayer, $passwd)
     {
         $playerDAL = new BoardDataAccess();
-        $res = $playerDAL->verifyPlayer($name,$passwd, $profileType);
+        $res = $playerDAL->verifyPlayer($namePlayer,$passwd);
         
         return $res;
     }

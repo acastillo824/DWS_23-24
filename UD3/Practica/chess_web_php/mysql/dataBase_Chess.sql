@@ -10,7 +10,7 @@ CREATE TABLE T_Players(
 	ID int auto_increment,
     namePlayer varchar(30) not null unique,
     email varchar(50) not null unique,
-    passwd varchar(30) not null,
+    passwd varchar(100) not null,
     profileType varchar(15) not null,	
     PRIMARY KEY (ID)
 );
@@ -37,11 +37,11 @@ create table T_BoardStatus(
     primary key (ID, ID_Match)
 );
 
-insert into T_Players (namePlayer, email, passwd, profileType) VALUE ('Adrian','acastillolopez@iessonferrer.net','12345', 'premium'),
-															('Okolo', 'danielokolo@iessonferrer.net', '12345', 'normal');
 
 
-select namePlayer,passwd,profileType from T_Players where namePlayer = 'Adrian';
+
+ 
+SELECT ID, namePlayer, email, passwd, profileType FROM T_Players; 
 
 
 

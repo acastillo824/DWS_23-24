@@ -12,7 +12,7 @@
 
     <header>
         <div id="titleFrontPage">
-            <a id="logIn" href="View/loginView.php">Registrarse</a>
+            <a id="logIn" href="View/SingIn.php">Registrarse</a>
             <a id="logIn" href="View/Login.php">Iniciar Sesion</a>
             <h1>BIENVENIDO A CHESS.net</h1>
         </div>
