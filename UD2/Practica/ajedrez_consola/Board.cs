@@ -74,18 +74,37 @@ namespace ChessAPI
         //Este método escribira por consola el tablero,
         //haciendo un salto de línea después de cada fila.
         //Para ver el formato del pintado, leer enunciado de la práctica
+        // public void Draw()
+        // {
+        //     Console.Write("Dibujando...\n");
+
+        //     for (int i = 0; i < 8; i++)
+        //     {
+        //         for (int j = 0; j < 8; j++)
+        //         {
+        //             Console.Write( board[i, j].GetCode());
+                    
+        //         }
+        //         Console.Write("\n");
+        //     }
+        // }
+
+        // + Borrar codigo basura
+
         public void Draw()
         {
-            Console.Write("Dibujando...\n");           
+            Console.Write("Dibujando...\n");
+
             for (int i = 0; i < 8; i++)
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    Console.Write(board[i, j].GetCode());
+                    Console.Write( board[i, j].GetCode());
                 }
                 Console.Write("\n");
             }
         }
+
         // TODO Practica 02_5
         //Este método devuelve una cadena con el estado del tablero. Dicha cadena,
         //ha de tener el formato esperado por la parte Web para poder procesarse
