@@ -1,9 +1,10 @@
-namespace ChessAPI
+namespace ChessAPI.Model
 {
     public class BoardPosition
     {
         private int _row;
         private int _column;
+
         public int Row
         {
             get { return _row; }

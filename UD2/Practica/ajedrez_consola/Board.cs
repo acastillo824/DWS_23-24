@@ -10,8 +10,6 @@ namespace ChessAPI
         public Board()
         {
             board = new Piece[8, 8];
-            //TODO Practica 02_7
-            // Este constructor colocará las piezas en el tablero
             board[0,0] = new Rook(Piece.ColorEnum.BLACK);
             board[0,1] = new Knight(Piece.ColorEnum.BLACK);
             board[0,2] = new Bishop(Piece.ColorEnum.BLACK);
@@ -67,30 +65,9 @@ namespace ChessAPI
         //en otras clases si lo consideras necesario...
         private void _Move(Movement movement)
         {
-
+            board[2,4] = board[1,4];
+            board[1,4] = board[3,4];
         }
-
-        // TODO Practica 02_4
-        //Este método escribira por consola el tablero,
-        //haciendo un salto de línea después de cada fila.
-        //Para ver el formato del pintado, leer enunciado de la práctica
-        // public void Draw()
-        // {
-        //     Console.Write("Dibujando...\n");
-
-        //     for (int i = 0; i < 8; i++)
-        //     {
-        //         for (int j = 0; j < 8; j++)
-        //         {
-        //             Console.Write( board[i, j].GetCode());
-                    
-        //         }
-        //         Console.Write("\n");
-        //     }
-        // }
-
-        // + Borrar codigo basura
-
         public void Draw()
         {
             Console.Write("Dibujando...\n");
@@ -112,11 +89,9 @@ namespace ChessAPI
         public string GetBoardState()
         {
             string result = string.Empty;
-            
+
             return result;
 
         }
-
-
     }
 }
