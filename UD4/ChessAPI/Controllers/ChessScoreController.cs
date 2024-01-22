@@ -7,4 +7,5 @@ namespace ChessAPI.Controllers;
 [Route("[controller]")]
 public class ChessScoreController : ControllerBase
 {
+    
 }
